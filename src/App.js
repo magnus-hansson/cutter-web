@@ -5,7 +5,7 @@ const initialFormState = { cutlength: "", numberofitems: "" };
 function App() {
   const [notes, setNotes] = useState([]);
   const [results, setResults] = useState([]);
-  const [baseLength, setBaselength] = useState(320);
+  const [baseLength, setBaselength] = useState();
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
@@ -72,9 +72,7 @@ function App() {
             onChange={(e) => setBaselength(parseInt(e.target.value))}
           />
         </div>
-        <div className="column">
-          {baseLength} {notes.length}
-        </div>
+        <div className="column">{/*   {baseLength} {notes.length} */}</div>
       </div>
       <div className="row 2">
         <div className="column">
