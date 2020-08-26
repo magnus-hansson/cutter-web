@@ -9,7 +9,7 @@ function App() {
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
-    fetchcuts();
+    //fetchcuts();
   }, []);
 
   async function createNote() {
@@ -42,14 +42,18 @@ function App() {
       console.log("great success");
       console.log(JSON.stringify({ baseLength: baseLength, cutlength: notes }));
       try {
-        const res = await fetch("https://localhost:5001/api/todoitems", {
-          method: "post",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ baseLength: baseLength, cutlength: notes }),
-        });
+        //const res = await fetch("https://localhost:5001/api/todoitems", {
+        const res = await fetch(
+          "https://mhcutter-api-dev.azurewebsites.net/api/todoitems",
+          {
+            method: "post",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ baseLength: baseLength, cutlength: notes }),
+          }
+        );
         const data = await res.json();
         setResults(data);
         console.log(data);
