@@ -28,7 +28,7 @@ function App() {
   }
 
   async function fetchcuts() {
-    //fetch("https://localhost:5001/api/todoitems")
+    
     fetch("https://mhcutter-api-dev.azurewebsites.net/api/todoitems")
       .then((res) => res.json())
       .then((res) => {
@@ -44,7 +44,7 @@ function App() {
       try {
         //const res = await fetch("https://localhost:5001/api/todoitems", {
         const res = await fetch(
-          "https://mhcutter-api-dev.azurewebsites.net/api/todoitems",
+          "https://mhcutter-api-dev.azurewebsites.net/api/cut",
           {
             method: "post",
             headers: {
@@ -67,7 +67,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">Cutting calculator</header>
+      <header className="App-header">Cutting list calculator</header>
       <div className="row">
         <div className="column">
           <input
@@ -76,7 +76,7 @@ function App() {
             onChange={(e) => setBaselength(parseInt(e.target.value))}
           />
         </div>
-        <div className="column">{/*   {baseLength} {notes.length} */}</div>
+        <div className="column"></div>
       </div>
       <div className="row 2">
         <div className="column">
